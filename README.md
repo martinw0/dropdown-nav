@@ -57,3 +57,18 @@ Users should be able to:
 
 - Frontend Mentor - [@martinw0](https://www.frontendmentor.io/profile/martinw0)
 - Twitter - [@LeWalletM](https://www.twitter.com/LeWalletM)
+
+## Questions
+
+- What is the difference between:
+
+```css
+display: inline-flex;
+````
+
+```css
+display: flex;
+flex-direction: row
+```
+
+[Answer](https://developpaper.com/the-difference-between-flex-and-inline-flex-in-css/)
