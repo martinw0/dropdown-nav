@@ -39,7 +39,7 @@ main {
   text-align: center;
 }
 .content h1 {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: 700;
   color: hsl(0deg, 0%, 8%);
   margin-top: 40px;
@@ -61,6 +61,9 @@ main {
   border-radius: 16px;
   margin-top: 20px;
 }
+.content button:hover {
+  cursor: pointer;
+}
 .content .clients {
   display: flex;
   align-items: center;
@@ -76,21 +79,82 @@ main {
   display: none;
 }
 
+.menu.mobile:hover {
+  cursor: pointer;
+}
+
+.close.mobile:hover {
+  cursor: pointer;
+}
+
 nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  width: 60vw;
+  width: 53vw;
   height: 100vh;
   background-color: hsl(0deg, 0%, 98%);
   position: absolute;
   top: 0;
   right: 0;
+  padding: 20px;
 }
 nav img {
   width: 20px;
+  align-self: end;
+  margin-bottom: 20px;
+}
+nav ul li {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: hsl(0deg, 0%, 41%);
+  margin: 25px 0;
+}
+nav ul li img {
+  margin-left: 10px;
+  margin-bottom: 0;
+  width: 10px;
+  align-self: center;
+}
+nav ul li:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+nav ul:first-of-type li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+nav .break {
+  flex-basis: 100%;
+}
+nav .menu-account li {
+  text-align: center;
+}
+nav .menu-account li:last-of-type {
+  border: solid hsl(0deg, 0%, 41%) 2px;
+  padding: 15px 0;
+  border-radius: 17px;
+}
+nav .submenu {
+  display: none;
+}
+nav .submenu li img {
+  width: 15px;
+  margin-right: 15px;
+  margin-left: 0;
+}
+nav .submenu li {
+  margin-left: 25px;
+}
+nav li.active .submenu {
+  display: block;
 }
 
-.overlay {
+nav.active {
+  display: flex;
+}
+
+.overlay.active {
   position: fixed;
   background-color: hsl(0deg, 0%, 8%);
   opacity: 0.5;

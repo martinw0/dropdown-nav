@@ -14,13 +14,28 @@
         <img class="logo" src="./images/logo.svg" alt="Logo">
         <nav>
           <img class="close mobile" src="./images/icon-close-menu.svg" alt="Close menu button">
-          <ul>
-            <li>Features</li>
-            <li>Company</li>
+          <ul class="menu-items">
+            <li class="hasSubmenu">Features<img src="./images/icon-arrow-down.svg">
+              <div class="break"></div>
+              <ul class="submenu">
+                <li><img src="./images/icon-todo.svg">Todo list</li>
+                <li><img src="./images/icon-calendar.svg">Calendar</li>
+                <li><img src="./images/icon-reminders.svg">Reminders</li>
+                <li><img src="./images/icon-planning.svg">Planning</li>
+              </ul>
+            </li>
+            <li class="hasSubmenu">Company<img src="./images/icon-arrow-down.svg">
+              <div class="break"></div>
+              <ul class="submenu">
+                <li>History</li>
+                <li>Our Team</li>
+                <li>Blog</li>
+              </ul>
+            </li>
             <li>Careers</li>
             <li>About</li>
           </ul>
-          <ul>
+          <ul class="menu-account">
             <li>Login</li>
             <li>Register</li>
           </ul>

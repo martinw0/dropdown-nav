@@ -48,7 +48,7 @@ main {
 .content {
     text-align: center;
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.3rem;
         font-weight: 700;
         color: $almost-black;
         margin-top: 40px;
@@ -69,6 +69,9 @@ main {
         border: none;
         border-radius: 16px;
         margin-top: 20px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .clients {
         display: flex;
@@ -84,20 +87,81 @@ main {
 .desktop {
     display: none;
 }
+.menu.mobile:hover {
+    cursor: pointer;
+}
+.close.mobile:hover {
+    cursor: pointer;
+}
 nav {
-    display: flex;
+    display: none;
     flex-direction: column;
-    width: 60vw;
+    width: 53vw;
     height: 100vh;
     background-color: $almost-white;
     position: absolute;
     top: 0;
     right: 0;
+    padding: 20px;
     img {
         width: 20px;
+        align-self: end;
+        margin-bottom: 20px;
+    }
+    ul li {
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: $medium-gray;
+        margin: 25px 0;
+        img {
+            margin-left: 10px;
+            margin-bottom: 0;
+            width: 10px;
+            align-self: center;
+        }
+        &:hover {
+            cursor: pointer;
+            font-weight: 700;
+        }
+    }
+    //Nav items
+    ul:first-of-type li {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .break {
+        flex-basis: 100%;
+    }
+    // Login and register
+    .menu-account li {
+        text-align: center;
+    }
+    // Register button
+    .menu-account li:last-of-type {
+        border: solid $medium-gray 2px;
+        padding: 15px 0;
+        border-radius: 17px;
+    }
+    .submenu {
+        display: none;
+        li img {
+            width: 15px;
+            margin-right: 15px;
+            margin-left: 0;
+        }
+        li {
+            margin-left: 25px;
+        }
+    }
+    li.active .submenu {
+        display: block;
     }
 }
-.overlay {
+nav.active {
+    display: flex;
+}
+.overlay.active {
     position: fixed;
     background-color: $almost-black;
     opacity: 0.5;

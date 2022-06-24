@@ -47,6 +47,8 @@ Users should be able to:
 
 ### What I learned
 
+- [How to do a break with flex](https://tobiasahlin.com/blog/flexbox-break-to-new-row/)
+
 ### Continued development
 
 ### Useful resources
@@ -72,3 +74,6 @@ flex-direction: row
 ```
 
 [Answer](https://developpaper.com/the-difference-between-flex-and-inline-flex-in-css/)
+
+Does the method I use to manage active styles in css and JS is easy to understand ?
+Any advices to improve the maintainability will be very helpful !!
