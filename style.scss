@@ -33,25 +33,62 @@ body {
 }
 main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     margin: 10px 20px;
 }
 .top-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    .logo {
+        @include media-min("tablet-down") {
+            margin: 0 20px;
+        }
+    }
 }
 .illustration.mobile {
     width: calc(100% + 40px);
     margin: 0 -20px;
     margin-top: 30px;
 }
+//container for grid tablet and desktop
+.container {
+    width: 100vw;
+    display: grid; 
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 80% 10%; 
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-grow: 1;
+    align-items: center;
+    @include media-min("desktop-down") {
+        width: 80vw;
+        margin: 0 10vw;
+    }
+}
 .content {
     text-align: center;
+    @include media-min("tablet-down") {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+        padding: 0 30px;
+    } 
     h1 {
         font-size: 3.3rem;
         font-weight: 700;
         color: $almost-black;
         margin-top: 40px;
+        br {
+            display: none;
+        }
+        @include media-min("tablet-down") {
+            font-size: 7rem;
+            margin-top: 100px;
+            br {
+                display: block;
+            }
+        }
     }
     p {
         font-size: 1.6rem;
@@ -59,6 +96,10 @@ main {
         color: $medium-gray;
         margin-top: 20px;
         line-height: 2.5rem;
+        @include media-min("tablet-down") {
+            margin-top: 50px;
+            width: 70%;
+        }
     }
     button {
         background-color: $almost-black;
@@ -72,6 +113,9 @@ main {
         &:hover {
             cursor: pointer;
         }
+        @include media-min("tablet-down") {
+            margin-top: 50px;
+        }
     }
     .clients {
         display: flex;
@@ -82,10 +126,32 @@ main {
         img {
             width: 20vw;
         }
+        @include media-min("tablet-down") {
+            margin-top: 100px;
+            img {
+                width: 8vw;
+            }
+        }
+    }
+}
+.illustration.desktop {
+    grid-area: 2 / 2 / 2 / 3;
+    width: 40vw;
+    @include media-min("tablet-down") {
+        width: 25vw;
+
     }
 }
 .desktop {
     display: none;
+    @include media-min("tablet-down") {
+        display: block;
+    }
+}
+.mobile {
+    @include media-min("tablet-down") {
+        display: none;
+    }
 }
 .menu.mobile:hover {
     cursor: pointer;
@@ -103,16 +169,34 @@ nav {
     top: 0;
     right: 0;
     padding: 20px;
+    @include media-min('tablet-down') {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        position: relative;
+        height: auto;
+        width: auto;
+        justify-content: space-between;
+    }
     img {
         width: 20px;
         align-self: end;
         margin-bottom: 20px;
+    }
+    ul {
+        @include media-min('tablet-down') {
+            display: inline-flex;
+            align-items: center;
+        }
     }
     ul li {
         font-size: 1.7rem;
         font-weight: 500;
         color: $medium-gray;
         margin: 25px 0;
+        @include media-min('tablet-down') {
+            margin: 0 15px;
+        }
         img {
             margin-left: 10px;
             margin-bottom: 0;
@@ -129,6 +213,11 @@ nav {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        @include media-min('tablet-down') {
+            display: inline-flex;
+            position: relative;
+            flex-wrap: nowrap
+        }
     }
     .break {
         flex-basis: 100%;
@@ -142,6 +231,9 @@ nav {
         border: solid $medium-gray 2px;
         padding: 15px 0;
         border-radius: 17px;
+        @include media-min('tablet-down') {
+            padding: 15px 25px;
+        }
     }
     .submenu {
         display: none;
@@ -152,6 +244,25 @@ nav {
         }
         li {
             margin-left: 25px;
+        }
+        @include media-min('tablet-down') {
+            position: absolute;
+            top: 35px;
+            right: 0;
+            background-color: $almost-white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 23px 12px rgba(0,0,0,0.14);
+            padding: 15px 20px;
+            li {
+                margin: 8px 0;
+                white-space: nowrap;
+            }
+        }
+    }
+    .hasSubmenu ~ .hasSubmenu .submenu {
+        @include media-min('tablet-down') {
+            left: 0;
+            right: initial;
         }
     }
     li.active .submenu {
