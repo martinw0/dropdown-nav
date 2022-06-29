@@ -53,14 +53,16 @@ main {
 }
 //container for grid tablet and desktop
 .container {
-    width: 100vw;
-    display: grid; 
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 80% 10%; 
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    flex-grow: 1;
-    align-items: center;
+    @include media-min("tablet-down") {
+        width: 100vw;
+        display: grid; 
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% 80% 10%; 
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        flex-grow: 1;
+        align-items: center;
+    }
     @include media-min("desktop-down") {
         width: 80vw;
         margin: 0 10vw;
